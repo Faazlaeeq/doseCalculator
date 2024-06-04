@@ -1,0 +1,33 @@
+{"$schema":{
+  "<disease>": [
+    {
+      "indication": "<indication>",
+      "drug": "<drug_name>",
+      "age": [
+        {
+          "range": "<age_range>",
+          "weight": "<weight_range>",
+          "requiredDose": "<required_dose>",
+          "doseCalculation": "<amount_of_dose_in_tblspoon_or tablet>"
+        }
+      ]
+    }
+  ]
+},
+    "eg":{
+  "Heart Disease": [
+    {
+      "indication": "Hypertension",
+      "drug": "Atenolol",
+      "age": [
+        {
+          "range": "18-45 years",
+          "weight": "60-90 kg",
+          "requiredDose": "50mg",
+          "doseCalculation": "1 tablet per day"
+        }
+      ]
+    }
+  ]
+}}
+

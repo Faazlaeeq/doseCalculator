@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dose Calculation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input,
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dose Calculation</h1>
+        <form id="doseForm">
+            <label for="age">Age:</label>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="number" id="age" name="age" value="5" required>
+                </div>
+                <div class="col-md-4">
+                    <select id="ageType" name="ageType" required>
+                        <option value="years">Years</option>
+                        <option value="months">Months</option>
+                        <option value="days">Days</option>
+                    </select>
+                </div>
+
+            </div>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" value="15" required>
+
+            <label for="condition">Condition:</label>
+            <select id="condition" name="condition" required>
+                <option value="syrups">Syrup</option>
+                <option value="Kidney Disease">Kidney</option>
+                <option value="Heart Disease">Heart</option>
+                <option value="Diabetes">Diabetes</option>
+                <option value="Viral Infection">Viral Infection</option>
+
+            </select>
+
+            <label for="indication">Indication:</label>
+            <select id="indication" name="indication" required>
+            </select>
+
+            <label for="medicineName">Medicine Name:</label>
+            <select id="medicineName" name="medicineName" required>
+                <!-- Options will be populated based on indication -->
+            </select>
+
+            <label for="doseStrength">Dose Strength (mg):</label>
+            <select id="doseStrength" name="doseStrength" required>
+                <!-- Options will be populated based on medicine -->
+            </select>
+
+            <button type="button" id="submit">Calculate Dose</button>
+        </form>
+
+        <p class="result" id="result"></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script>
+        function normalizeRange(range) {
+
+            let normalized = range.toLowerCase().replace(' years', '').replace(' year', '');
+
+            let inMonths = normalized.includes('months');
+            normalized = normalized.replace(' months', '').replace(' month', '');
+
+            if (normalized.includes('-')) {
+                let [start, end] = normalized.split('-').map(Number);
+                if (inMonths) {
+                    start /= 12;
+                    end /= 12;
+                }
+                return { start, end };
+            } else if (normalized.includes('>')) {
+                let start = Number(normalized.replace('>', '').trim());
+                if (inMonths) {
+                    start /= 12;
+                }
+                return { start, end: Infinity };
+            } else if (normalized.includes('<')) {
+                let end = Number(normalized.replace('<', '').trim());
+                if (inMonths) {
+                    end /= 12;
+                }
+                return { start: 0, end };
+            } else {
+                // Handle other formats as needed
+            }
+
+        }
+        function normalizeWeightRange(range) {
+            let normalized = range.toLowerCase().replace('kg', '').replace('mg', '/1000');
+
+            let inGrams = normalized.includes('mg');
+            normalized = normalized.replace(' mg', '').replace(' mg', '');
+
+            if (normalized.includes('-')) {
+                let [start, end] = normalized.split('-').map(Number);
+                if (inGrams) {
+                    start /= 1000;
+                    end /= 1000;
+                }
+                return { start, end };
+            } else if (normalized.includes('>')) {
+                let start = Number(normalized.replace('>', '').trim());
+                if (inGrams) {
+                    start /= 1000;
+                }
+                return { start, end: Infinity };
+            } else if (normalized.includes('<')) {
+                let end = Number(normalized.replace('<', '').trim());
+                if (inGrams) {
+                    end /= 1000;
+                }
+                return { start: 0, end };
+            } else if (normalized.includes('up to')) {
+                let end = Number(normalized.replace('up to', '').trim());
+                if (inGrams) {
+                    end /= 1000;
+                }
+                return { start: 0, end };
+            } else if (normalized.includes('≥')) {
+                let start = Number(normalized.replace('≥', '').trim());
+                if (inGrams) {
+                    start /= 1000;
+                }
+                return { start, end: Infinity };
+            } else {
+                // Handle other formats as needed
+            }
+        }
+        function isWeightInRange(weight, range) {
+            range = normalizeWeightRange(range);
+            return weight >= range.start && weight <= range.end;
+        }
+        function isAgeInRange(age, range) {
+            const ageType = document.getElementById('ageType').value;
+            if (ageType === 'months') {
+                age /= 12;
+            }
+            if (ageType === 'days') {
+                age /= 365;
+            }
+            range = normalizeRange(range);
+            return age >= range.start && age <= range.end;
+        }
+
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const conditionSelect = document.getElementById('condition');
+                const indicationSelect = document.getElementById('indication');
+                const medicineSelect = document.getElementById('medicineName');
+                const doseStrengthSelect = document.getElementById('doseStrength');
+                const ageFeild = document.getElementById('age');
+                const weightFeild = document.getElementById('weight');
+                const submitButton = document.getElementById('submit');
+                const body = document.querySelector('body');
+
+
+
+                function updateData() {
+                    updateIndication();
+                    updateMedicine();
+                    updateDoseStrength();
+                }
+                conditionSelect.addEventListener('change', updateIndication);
+                indicationSelect.addEventListener('change', updateMedicine);
+                medicineSelect.addEventListener('change', updateDoseStrength);
+                ageFeild.addEventListener('change', updateData);
+                weightFeild.addEventListener('change', updateData);
+                conditionSelect.addEventListener('click', updateIndication);
+                indicationSelect.addEventListener('click', updateMedicine);
+                medicineSelect.addEventListener('click', updateDoseStrength);
+                submitButton.addEventListener('click', calculateDose);
+                function updateIndication() {
+
+                    let indications = [];
+
+                    const condition = conditionSelect.value;
+                    const indicationsSet = [...new Set(data[condition]?.map(item => item.indication))];
+                    indicationsSet.forEach(indication =>
+                        indications.push({ "indication": indication })
+                    );
+                    console.log(indications);
+                    console.log(indicationsSet);
+                    // console.log(data[condition]);
+                    if (indications) {
+                        populateSelect(indicationSelect, indications, 'indication');
+                        updateMedicine();
+                    }
+                }
+
+                function updateMedicine() {
+                    const condition = conditionSelect.value;
+                    const indication = indicationSelect.value;
+                    const medicines = data[condition]?.filter(item => item.indication === indication);
+                    // console.log("medicines Name");
+                    // console.log(medicines);
+
+                    if (medicines) {
+                        populateSelect(medicineSelect, medicines, 'drug');
+                        updateDoseStrength();
+                    }
+                }
+
+                function updateDoseStrength() {
+                    const condition = conditionSelect.value;
+                    const indication = indicationSelect.value;
+                    const medicine = medicineSelect.value;
+                    const age = parseInt(document.getElementById('age').value);
+                    const weight = parseInt(document.getElementById('weight').value);
+                    const doseStrengths = data[condition]?.find(item => item.indication === indication && item.drug === medicine);
+                    // console.log(doseStrengths);
+                    let avialabiltyCriteria = "Medicine Avilable for following criteria: ";
+                    if (doseStrengths) {
+                        const doseInMls = doseStrengths.age.find(item => {
+                            // console.log(item, isAgeInRange(age, item.range), isWeightInRange(weight, item.weight));
+                            avialabiltyCriteria += "<br>" + item.range + " " + item.weight + " " + item.requiredDose;
+                            return isAgeInRange(age, item.range) && isWeightInRange(weight, item.weight);
+                            // // console.log(item);
+                            // const ageRange = item.range.split('-');
+                            // const weightRange = item.weight.split('-');
+                            // const ageType = document.getElementById('ageType').value;
+
+
+                            // if (ageType === 'months') {
+                            //     minAge *= 12;
+                            //     maxAge *= 12;
+                            // }
+
+                            // const age = parseInt(document.getElementById('age').value);
+                            // if (ageType === 'months') {
+                            //     minAge /= 12;
+                            //     maxAge /= 12;
+                            // }
+
+
+                            // let minWeight, maxWeight;
+                            // if (weightRange[0].includes('>')) {
+                            //     minWeight = parseInt(weightRange[0].replace('>', ''));
+                            //     maxWeight = Infinity;
+                            // } else if (weightRange[1] && weightRange[1].includes('<')) {
+                            //     minWeight = parseInt(weightRange[0]);
+                            //     maxWeight = parseInt(weightRange[1].replace('<', ''));
+                            // } else {
+                            //     minWeight = parseInt(weightRange[0]);
+                            //     maxWeight = weightRange[1] ? parseInt(weightRange[1]) : Infinity;
+                            // }
+                            // console.log(minAge, maxAge, minWeight, maxWeight, age, weight);
+                            // return age >= minAge && age <= maxAge && weight >= minWeight && weight <= maxWeight;
+                        });
+                        if (doseInMls) {
+                            populateSelect(doseStrengthSelect, [doseInMls], 'requiredDose');
+                            document.getElementById('result').innerHTML = "";
+                        }
+                        else {
+                            populateSelect(doseStrengthSelect, [{ requiredDose: 'No dose found for given age and weight' }], 'requiredDose');
+                            document.getElementById('result').innerHTML = avialabiltyCriteria;
+
+                        }
+
+                    }
+                }
+
+                function populateSelect(selectElement, data, key) {
+                    selectElement.innerHTML = '';
+
+                    data.forEach(item => {
+                        // console.log(item);
+                        const option = document.createElement('option');
+                        option.value = item[key];
+                        option.textContent = item[key];
+                        selectElement.appendChild(option);
+                    });
+                }
+
+                function calculateDose() {
+                    const age = parseInt(document.getElementById('age').value);
+                    const weight = parseInt(document.getElementById('weight').value);
+                    const condition = document.getElementById('condition').value;
+                    const indication = document.getElementById('indication').value;
+                    const medicine = document.getElementById('medicineName').value;
+                    const doseStrength = document.getElementById('doseStrength').value;
+                    console.log(age, weight, indication, medicine, doseStrength, data[condition].filter(condition => condition.indication === indication && condition.drug === medicine));
+                    const dose = data[condition].filter(condition => condition.indication === indication && condition.drug === medicine)?.[0].age?.find(item => {
+                        return isAgeInRange(age, item.range) && isWeightInRange(weight, item.weight) && item.requiredDose === doseStrength;
+                    })?.doseCalculation;
+
+                    if (dose) {
+                        const result = `Dose: ${dose}`;
+                        document.getElementById('result').textContent = result;
+                    } else {
+                        document.getElementById('result').textContent = "No dose found for the selected criteria.";
+                    }
+                }
+            })
+            .catch(error => console.error(error));
+        // fetch('data.json')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         const conditionSelect = document.getElementById('condition');
+        //         const indicationSelect = document.getElementById('indication');
+        //         const medicineSelect = document.getElementById('medicineName');
+        //         const doseStrengthSelect = document.getElementById('doseStrength');
+
+        //         conditionSelect.addEventListener('change', updateIndication);
+        //         indicationSelect.addEventListener('change', updateMedicine);
+        //         medicineSelect.addEventListener('change', updateDoseStrength);
+
+        //         function updateIndication() {
+        //             const condition = conditionSelect.value;
+        //             const indications = data[condition];
+        //             populateSelect(indicationSelect, indications, 'indication');
+        //             updateMedicine();
+        //         }
+
+        //         function updateMedicine() {
+        //             const condition = conditionSelect.value;
+        //             const indication = indicationSelect.value;
+        //             const medicines = data[condition].find(item => item.indication === indication);
+        //             populateSelect(medicineSelect, medicines, 'drug');
+        //             updateDoseStrength();
+        //         }
+
+        //         function updateDoseStrength() {
+        //             const condition = conditionSelect.value;
+        //             const indication = indicationSelect.value;
+        //             const medicine = medicineSelect.value;
+        //             const doseStrengths = data[condition].find(item => item.indication === indication && item.drug === medicine);
+        //             populateSelect(doseStrengthSelect, doseStrengths.age, 'requiredDose');
+        //         }
+
+        //         function populateSelect(selectElement, data, key) {
+        //             selectElement.innerHTML = '';
+        //             data.forEach(item => {
+        //                 const option = document.createElement('option');
+        //                 option.value = item[key];
+        //                 option.textContent = item[key];
+        //                 selectElement.appendChild(option);
+        //             });
+        //         }
+
+        //         function calculateDose() {
+        //             const age = document.getElementById('age').value;
+        //             const weight = document.getElementById('weight').value;
+        //             const doseCalculation = doseStrengthSelect.options[doseStrengthSelect.selectedIndex].text;
+        //             const result = `Age: ${age} years, Weight: ${weight} kg, Dose Calculation: ${doseCalculation}`;
+        //             document.getElementById('result').textContent = result;
+        //         }
+
+        //         document.getElementById('doseForm').addEventListener('submit', function (event) {
+        //             event.preventDefault();
+        //             calculateDose();
+        //         });
+
+        //         updateIndication();
+        //     })
+        //     .catch(error => console.error(error));
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

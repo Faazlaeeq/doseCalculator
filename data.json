@@ -1,0 +1,952 @@
+{
+    "syrups": [
+        {
+            "indication": "Antipyretic",
+            "drug": "Calpol Syrup",
+            "age": [
+                {
+                    "range": "2-6 months",
+                    "weight": ">4kg",
+                    "requiredDose": "2.5ml",
+                    "doseCalculation": "1/2 tsp b.d"
+                },
+                {
+                    "range": "6-24 months",
+                    "weight": "7.53-11.75kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp q.i.d"
+                },
+                {
+                    "range": "2-4 years",
+                    "weight": "12-15.42kg",
+                    "requiredDose": "7.5ml",
+                    "doseCalculation": "1 1/2 tsp q.i.d"
+                },
+                {
+                    "range": "4-6 years",
+                    "weight": "15.42-19.96kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "2 tsp q.i.d"
+                }
+            ]
+        },
+        {
+            "indication": "Pain and fever",
+            "drug": "Panadol Syrup",
+            "age": [
+                {
+                    "range": "6-12 years",
+                    "weight": "19.5-37.5kg",
+                    "requiredDose": "5.0-10.0ml",
+                    "doseCalculation": "1-2 tsp b.d"
+                }
+            ]
+        },
+        {
+            "indication": "Antiallergy",
+            "drug": "Zyrtec Syrup",
+            "age": [
+                {
+                    "range": "2-5 years",
+                    "weight": "≤9.9kg",
+                    "requiredDose": "2.5ml",
+                    "doseCalculation": "1/2 tsp q.d"
+                },
+                {
+                    "range": "6-11 years",
+                    "weight": "10-19.0kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp q.d"
+                },
+                {
+                    "range": ">12",
+                    "weight": "≥30kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "2 tsp q.d"
+                }
+            ]
+        },
+        {
+            "indication": "Dry Cough",
+            "drug": "Dollar DS Syrup",
+            "age": [
+                {
+                    "range": "1-2 years",
+                    "weight": "9.66-12.46kg",
+                    "requiredDose": "2.5ml",
+                    "doseCalculation": "1/2 tsp t.i.d"
+                },
+                {
+                    "range": "2-4 years",
+                    "weight": "12.0-16.33kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp t.i.d"
+                },
+                {
+                    "range": "4-8 years",
+                    "weight": "16.33-25.63kg",
+                    "requiredDose": "7.5ml",
+                    "doseCalculation": "1 1/2 tsp t.i.d"
+                },
+                {
+                    "range": "8-12 years",
+                    "weight": "25.63-39.92kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "2 tsp t.i.d"
+                },
+                {
+                    "range": ">12",
+                    "weight": ">39.92kg",
+                    "requiredDose": "7.5ml",
+                    "doseCalculation": "1 1/2 tsp t.i.d"
+                }
+            ]
+        },
+        {
+            "indication": "Multivitamin",
+            "drug": "Vidaylin (120 ml) Syrup",
+            "age": [
+                {
+                    "range": "1-5 YEARS",
+                    "weight": "9.66-18.37kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp q.d"
+                },
+                {
+                    "range": "18>",
+                    "weight": ">66kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "2 tsp q.d"
+                }
+            ]
+        },
+        {
+            "indication": "Multivitamin",
+            "drug": "Apizyl (120 ml) Syrup",
+            "age": [
+                {
+                    "range": "<6 months",
+                    "weight": ">4kg",
+                    "requiredDose": "2.5ml",
+                    "doseCalculation": "1/2 tsp b.d"
+                },
+                {
+                    "range": "6 months - 1 year",
+                    "weight": "7.94-9.66kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp b.d"
+                },
+                {
+                    "range": "1-3 years",
+                    "weight": "9.66-16.06kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp t.i.d"
+                },
+                {
+                    "range": "3-12 years",
+                    "weight": "14.06-39.92kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "2 tsp t.i.d"
+                },
+                {
+                    "range": "12>",
+                    "weight": ">31kg",
+                    "requiredDose": "15ml",
+                    "doseCalculation": "3 tsp t.i.d"
+                }
+            ]
+        },
+        {
+            "indication": "Bronchodilator Cough Suppresent Expectorant Mucolytic Spasmolytic",
+            "drug": "Olcuf Syrup",
+            "age": [
+                {
+                    "range": "<6 years",
+                    "weight": ">20kg",
+                    "requiredDose": "2.5ml",
+                    "doseCalculation": "1/2 tsp b.d"
+                },
+                {
+                    "range": "6-12 years",
+                    "weight": "20.64-39.92kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp b.d"
+                },
+                {
+                    "range": "12>",
+                    "weight": ">31kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp b.d"
+                }
+            ]
+        },
+        {
+            "indication": "Cold and Congestion",
+            "drug": "Arinac Syrup",
+            "age": [
+                {
+                    "range": "6-12 years",
+                    "weight": ">31kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "2 tsp t.i.d"
+                }
+            ]
+        },
+        {
+            "indication": "Pain and Fever",
+            "drug": "Febrol Syrup",
+            "age": [
+                {
+                    "range": "3 months to 1 year",
+                    "weight": "6.4-9.66kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp q.i.d"
+                },
+                {
+                    "range": "1-6 years",
+                    "weight": "9.66-20.64kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "2 tsp q.i.d"
+                },
+                {
+                    "range": "6-12 years",
+                    "weight": "20.64-39.92kg",
+                    "requiredDose": "10-20ml",
+                    "doseCalculation": "2-4 tsp q.i.d"
+                }
+            ]
+        },
+        {
+            "indication": "Asthma and Allergy",
+            "drug": "Acefyl Syrup",
+            "age": [
+                {
+                    "range": "18>",
+                    "weight": ">66.9kg",
+                    "requiredDose": "15-25ml",
+                    "doseCalculation": "2½ tb t.i.d"
+                }
+            ]
+        }
+    ],
+    "Kidney Disease": [
+        {
+            "indication": "Glomerulonephritis",
+            "drug": "LASIX (20mg)",
+            "age": [
+                {
+                    "range": "0-11 months",
+                    "weight": "<10kg",
+                    "requiredDose": "20mg",
+                    "doseCalculation": "Intravenous"
+                },
+                {
+                    "range": "1-17 Years",
+                    "weight": "1-53kg",
+                    "requiredDose": "40mg",
+                    "doseCalculation": "2 Tablet per day"
+                },
+                {
+                    "range": "18> Years",
+                    "weight": ">53kg",
+                    "requiredDose": "80mg",
+                    "doseCalculation": "4 Tablet per day"
+                }
+            ]
+        },
+        {
+            "indication": "Glomerulonephritis",
+            "drug": "LEUKERAN (2mg)",
+            "age": [
+                {
+                    "range": "1-17 Years",
+                    "weight": "1-53kg",
+                    "requiredDose": "12mg",
+                    "doseCalculation": "6 Tablets per day"
+                },
+                {
+                    "range": "18> Years",
+                    "weight": ">53kg",
+                    "requiredDose": "12mg",
+                    "doseCalculation": "6 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Glomerulonephritis",
+            "drug": "NEORL (100mg)",
+            "age": [
+                {
+                    "range": "1-17 Years",
+                    "weight": "1-53kg",
+                    "requiredDose": "200mg",
+                    "doseCalculation": "2 Tablets per day"
+                },
+                {
+                    "range": "18> Years",
+                    "weight": ">53kg",
+                    "requiredDose": "300mg",
+                    "doseCalculation": "3 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Glomerulonephritis",
+            "drug": "ERYTHROCIN (250mg)",
+            "age": [
+                {
+                    "range": "1-17 Year",
+                    "weight": "1-53kg",
+                    "requiredDose": "500mg",
+                    "doseCalculation": "4 Tablets per day"
+                },
+                {
+                    "range": "18> Years",
+                    "weight": ">53kg",
+                    "requiredDose": "1000mg",
+                    "doseCalculation": "4 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Glomerulonephritis",
+            "drug": "HYDRALAZINE (25mg)",
+            "age": [
+                {
+                    "range": "1-17 Years",
+                    "weight": "1-53kg",
+                    "requiredDose": "25mg",
+                    "doseCalculation": "1 Tablets per day"
+                },
+                {
+                    "range": "18> Years",
+                    "weight": ">53kg",
+                    "requiredDose": "50mg",
+                    "doseCalculation": "2 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Analgesic Neuropathy",
+            "drug": "IMIDOL (25mg)",
+            "age": [
+                {
+                    "range": "6-12 Years",
+                    "weight": "19.5kg – 41.5kg",
+                    "requiredDose": "25mg",
+                    "doseCalculation": "1 Tablets per day"
+                },
+                {
+                    "range": "12 Years Above",
+                    "weight": ">42kg",
+                    "requiredDose": "75mg",
+                    "doseCalculation": "3 Tablets per day"
+                },
+                {
+                    "range": "60 Years Above",
+                    "weight": ">42kg",
+                    "requiredDose": "25mg",
+                    "doseCalculation": "1 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Urinary Tract Infection",
+            "drug": "AMOXIL (250mg)",
+            "age": [
+                {
+                    "range": "0-3 months",
+                    "weight": "<5.5kg",
+                    "requiredDose": "30ml",
+                    "doseCalculation": "2 tbsp per day"
+                },
+                {
+                    "range": "4-12 Years",
+                    "weight": "15.4kg-41.5kg",
+                    "requiredDose": "60ml",
+                    "doseCalculation": "6 tbsp per day"
+                },
+                {
+                    "range": "12 Years above",
+                    "weight": ">42kg",
+                    "requiredDose": "250mg",
+                    "doseCalculation": "3 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Urinary Tract Infection",
+            "drug": "LEFLOX (750mg)",
+            "age": [
+                {
+                    "range": "18> Years",
+                    "weight": ">53kg",
+                    "requiredDose": "750mg",
+                    "doseCalculation": "1 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "KIDNEY CYSTS",
+            "drug": "BACTRIM (400mg/40mg)",
+            "age": [
+                {
+                    "range": "2 months - 2 years",
+                    "weight": "4kg-12kg",
+                    "requiredDose": "40mg",
+                    "doseCalculation": "3 tbsp per day"
+                },
+                {
+                    "range": "2-5 years",
+                    "weight": "12kg-20kg",
+                    "requiredDose": "400mg",
+                    "doseCalculation": "1 Tablet per day"
+                },
+                {
+                    "range": "6> Years",
+                    "weight": ">19.5kg",
+                    "requiredDose": "800mg",
+                    "doseCalculation": "2 Tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "KIDNEY CYSTS",
+            "drug": "TRIMETHOPRIM (200mg)",
+            "age": [
+                {
+                    "range": "1 month - 5 years",
+                    "weight": "3.3kg-16kg",
+                    "requiredDose": "5ml",
+                    "doseCalculation": "1 tsp"
+                },
+                {
+                    "range": "6-12 Years",
+                    "weight": "19.5kg-41.5kg",
+                    "requiredDose": "10ml",
+                    "doseCalculation": "1 Tablet per day"
+                },
+                {
+                    "range": "12> Years",
+                    "weight": ">42kg",
+                    "requiredDose": "400mg",
+                    "doseCalculation": "2 Tablets per day"
+                }
+            ]
+        }
+    ],
+    "Diabetes":[
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Fortamet",
+                "age": [
+                    {
+                        "range": "18-79",
+                        "weight": "<50kg",
+                        "requiredDose": "500mg",
+                        "doseCalculation": "2 Tablet per day"
+                    },
+                    {
+                        "range": "18-79",
+
+                        "weight": "<75kg",
+                        "requiredDose": "850mg",
+                        "doseCalculation":"1 Tablet per day"
+                    },
+                    {
+                        "range": "10-17",
+                        "weight": "<50kg",
+                        "requiredDose": "500mg",
+                        "doseCalculation": "2 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Glumetza",
+                "age": [
+                    {
+                        "range": "18-79",
+                        "weight": "<50kg",
+                        "requiredDose": "500mg",
+                        "doseCalculation": "2 Tablet per day"
+                    },
+                    {
+                        "range": "18-79",
+                        "weight": "<75kg",
+                        "requiredDose": "850mg",
+                        "doseCalculation": "1 Tablet per day"
+                    },
+                    {
+                        "range": "10-17",
+                        "weight": "<50kg",
+                        "requiredDose": "500mg",
+                        "doseCalculation": "2 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Glucophage",
+                "age": [
+                    {
+                        "range": "18-79",
+                        "weight": "<75",
+                        "requiredDose": "500mg",
+                        "doseCalculation": "2 Tablet per day"
+                    },
+                    
+                        {
+                            "range": "18-79",
+                            "weight": "<75",
+                            "requiredDose": "850mg",
+                            "doseCalculation": "1 Tablet per day"
+                        }
+                    
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Rybelsus",
+                "age": [
+                    {
+                        "range": "18-79",
+                        "weight": "27-96kg",
+                        "requiredDose": "3mg",
+                        "doseCalculation": "1 Tablet per day"
+                    },
+                     {
+                        "range": "18-79",
+                        "weight": "27-96kg",
+                        "requiredDose": "3mg",
+                        "doseCalculation": "1 Tablet per day"
+                    },
+                    {
+                        "range": "18-79",
+                        "weight": "27-96kg",
+                        "requiredDose": "27-96kg",
+                        "doseCalculation": "1 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Acarbose",
+                "age": [
+                    {
+                        "range": "18-79",
+                        "weight": ">30kg",
+                        "requiredDose": "50mg",
+                        "doseCalculation": "3 Tablet per day"
+                    },
+                    {
+                        "range": "18-79",
+                        "weight": ">30kg",
+                        "requiredDose": "300mg",
+                        "doseCalculation": "3 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Alogliptin",
+                "age": [
+                    {
+                        "range": "51-70",
+                        "weight": ">30kg",
+                        "requiredDose": "12.5mg",
+                        "doseCalculation": "1 Tablet per day"
+                    },
+                    {
+                        "range": "51-68",
+                        "weight": ">27kg",
+                        "requiredDose": "25mg",
+                        "doseCalculation": "1 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Linagliptin",
+                "age": [
+                    {
+                        "range": "<70",
+                        "weight": "<29.7kg",
+                        "requiredDose": "5mg",
+                        "doseCalculation": "1 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Diamicron",
+                "age": [
+                    {
+                        "range": "18-65",
+                        "weight": "<30kg",
+                        "requiredDose": "80mg",
+                        "doseCalculation": "2 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Amaryl",
+                "age": [
+                    {
+                        "range": ">18",
+                        "weight": ">27kg",
+                        "requiredDose": "1 mg",
+                        "doseCalculation": "1 Tablet per day"
+                    },
+                    {
+                        "range": ">18",
+                        "weight": ">27kg",
+                        "requiredDose": "2 mg",
+                        "doseCalculation": "1 Tablet per day"
+                    },
+                    {
+                        "range": ">18",
+                        "weight": "27-70kg",
+                        "requiredDose": "4 mg",
+                        "doseCalculation": "1 Tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Diabetes Type 2",
+                "drug": "Invokana",
+                "age": [
+                    {
+                        "range": ">18",
+                        "weight": ">30kg",
+                        "requiredDose": "100mg",
+                        "doseCalculation": "1 Tablet per day"
+                    },
+                    {
+                        "range": ">18",
+                        "weight": ">30",
+                        "requiredDose": "300mg",
+                        "doseCalculation": "1 Tablet per day"
+                    }
+                ]
+            }
+        
+    ],
+    "Heart Disease":
+        [
+            {
+                "indication": "High Blood pressure and CVD.",
+                "drug": "Captopril(25mg)",
+                "age": [
+                    {
+                        "range": "<0.920547 months",
+                        "weight": "3-8 kg",
+                        "requiredDose": "0.5 mg",
+                        "doseCalculation": "Every 6-24 hours"
+                    },
+                    {
+                        "range": "0-12 months",
+                        "weight": ">10 kg",
+                        "requiredDose": "2.5-6.0 mg",
+                        "doseCalculation": "1 tablet per day"
+                    },
+                    {
+                        "range": "1-17 years",
+                        "weight": "1-53 kg",
+                        "requiredDose": "6 mg",
+                        "doseCalculation": "Every 6-12 hours"
+                    },
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "12.5-25 mg",
+                        "doseCalculation": "3 tablets per day"
+                    }
+                ]
+            },
+            {
+                "indication": "High Blood pressure and CVD.",
+                "drug": "Fosinopril(10/20/40mg)",
+                "age": [
+                    {
+                        "range": "<6 years",
+                        "weight": "<50 kg",
+                        "requiredDose": "0.1-0.6 mg",
+                        "doseCalculation": "1 tablet per day"
+                    },
+                    {
+                        "range": "18> years",
+                        "weight": "≥50 kg",
+                        "requiredDose": "5-10 mg",
+                        "doseCalculation": "1 tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Heart Failure.",
+                "drug": "Losartan (50mg)",
+                "age": [
+                    {
+                        "range": "6> years",
+                        "weight": "6-55 kg",
+                        "requiredDose": "0.7 mg",
+                        "doseCalculation": "1 tablet per day"
+                    },
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "50 mg",
+                        "doseCalculation": "1 tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Heart Failure.",
+                "drug": "Eprosartan (600mg)",
+                "age": [
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "400-600 mg",
+                        "doseCalculation": "2 tablets per day"
+                    },
+                    {
+                        "range": "60> years",
+                        "weight": "≥42 kg",
+                        "requiredDose": "600 mg",
+                        "doseCalculation": "1 tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Heart Failure.",
+                "drug": "Sacubitril/Valsartan (50mg)",
+                "age": [
+                    {
+                        "range": "≥1 year",
+                        "weight": "<40 kg",
+                        "requiredDose": "1.6-2.3 mg",
+                        "doseCalculation": "2 tablets per day"
+                    },
+                    {
+                        "range": "≥1 year",
+                        "weight": "≥40 kg and <50 kg",
+                        "requiredDose": "24-51 mg",
+                        "doseCalculation": "2 tablets per day"
+                    },
+                    {
+                        "range": "≥1 year",
+                        "weight": "≥50 kg",
+                        "requiredDose": "49-97 mg",
+                        "doseCalculation": "2 tablets per day"
+                    }
+                
+                   
+                ]
+            },
+            {
+                "indication": "Heart Attacks/Angina/Arrhythmias",
+                "drug": "Acebutolol (200mg)",
+                "age": [
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "400-1200 mg",
+                        "doseCalculation": "Every 12 hours"
+                    },
+                    {
+                        "range": "60> years",
+                        "weight": "≥42 kg",
+                        "requiredDose": "200-400 mg",
+                        "doseCalculation": "1 tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Heart Attacks/Angina/Arrhythmias",
+                "drug": "Atenolol (25/50/100mg)",
+                "age": [
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "50 mg",
+                        "doseCalculation": "1 tablet per day"
+                    },
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "100 mg",
+                        "doseCalculation": "1 tablet per day"
+                    },
+                    {
+                        "range": "60> years",
+                        "weight": "≥42 kg",
+                        "requiredDose": "25-100 mg",
+                        "doseCalculation": "1 tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Heart Attacks/Angina/Arrhythmias",
+                "drug": "Propranolol (10-160mg)",
+                "age": [
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "80-320 mg",
+                        "doseCalculation": "Every 6-12 hours"
+                    },
+                    {
+                        "range": "60> years",
+                        "weight": "≥42 kg",
+                        "requiredDose": "10 mg",
+                        "doseCalculation": "Every 6-8 hours"
+                    }
+                ]
+            },
+            {
+                "indication": "Heart Attacks/Angina/Arrhythmias",
+                "drug": "Diltiazem (30-420mg)",
+                "age": [
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "120-320 mg",
+                        "doseCalculation": "1 tablet per day"
+                    }
+                ]
+            },
+            {
+                "indication": "Heart Attacks/Angina/Arrhythmias",
+                "drug": "Verapamil (40-360mg)",
+                "age": [
+                    {
+                        "range": "1-15 years old",
+                        "weight": "10-50 kg",
+                        "requiredDose": "4-8 mg",
+                        "doseCalculation": "Every 8 hours"
+                    },
+                    {
+                        "range": "18> years",
+                        "weight": "≥53 kg",
+                        "requiredDose": "80-120 mg",
+                        "doseCalculation": "Every 8 hours"
+                    },
+                    {
+                        "range": "60> years",
+                        "weight": "≥42 kg",
+                        "requiredDose": "80-120 mg",
+                        "doseCalculation": "Every 8 hours"
+                    }
+                ]
+            }
+        ]
+        ,
+    "Viral Infection": [
+        {
+            "indication": "Chicken pox",
+            "drug": "Acyclovir",
+            "age": [
+                {
+                    "range": ">12",
+                    "weight": "<40kg",
+                    "requiredDose": "800mg",
+                    "doseCalculation": "4 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Genital Herpes",
+            "drug": "Valacyclovir",
+            "age": [
+                {
+                    "range": ">18",
+                    "weight": ">30kg",
+                    "requiredDose": "1000mg",
+                    "doseCalculation": "4 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Influenza A OR B",
+            "drug": "Oseltamivir",
+            "age": [
+                {
+                    "range": "<13",
+                    "weight": ">40kg",
+                    "requiredDose": "75mg",
+                    "doseCalculation": "2 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "HIV 1 Infection",
+            "drug": "Lopinavir/ritonavir",
+            "age": [
+                {
+                    "range": ">18",
+                    "weight": "20-30kg",
+                    "requiredDose": "200 mg/50mg",
+                    "doseCalculation": "2 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "HIV infection",
+            "drug": "Darunavir/ritonavir",
+            "age": [
+                {
+                    "range": "6 to 18",
+                    "weight": "20kg-30kg",
+                    "requiredDose": "375 mg/50mg",
+                    "doseCalculation": "2 tablets per day"
+                },
+                {
+                    "range": ">30kg - 40kg",
+                    "weight": "",
+                    "requiredDose": "2 tablets per day",
+                    "doseCalculation": ""
+                }
+            ]
+        },
+        {
+            "indication": "Cytomegalovirus",
+            "drug": "Gancyclovir",
+            "age": [
+                {
+                    "range": ">40",
+                    "weight": ">40kg",
+                    "requiredDose": "450 mg/60mg",
+                    "doseCalculation": "2 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Chronic hepatitis B",
+            "drug": "Entecavir",
+            "age": [
+                {
+                    "range": ">2",
+                    "weight": "47-49kg",
+                    "requiredDose": "5mg",
+                    "doseCalculation": "2 Capsules per day"
+                }
+            ]
+        },
+        {
+            "indication": "Hepatitis C",
+            "drug": "Sofosbuvir",
+            "age": [
+                {
+                    "range": ">18",
+                    "weight": ">35kg",
+                    "requiredDose": "600mg",
+                    "doseCalculation": "1 Capsule per day"
+                }
+            ]
+        }
+    ]
+}
+
+    
