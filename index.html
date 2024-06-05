@@ -91,11 +91,7 @@
 
             <label for="condition">Condition:</label>
             <select id="condition" name="condition" required>
-                <option value="syrups">Syrup</option>
-                <option value="Kidney Disease">Kidney</option>
-                <option value="Heart Disease">Heart</option>
-                <option value="Diabetes">Diabetes</option>
-                <option value="Viral Infection">Viral Infection</option>
+
 
             </select>
 
@@ -220,7 +216,7 @@
                 const submitButton = document.getElementById('submit');
                 const body = document.querySelector('body');
 
-
+                populateSelect(conditionSelect, Object.keys(data));
 
                 function updateData() {
                     updateIndication();
@@ -328,14 +324,24 @@
 
                 function populateSelect(selectElement, data, key) {
                     selectElement.innerHTML = '';
-
-                    data.forEach(item => {
-                        // console.log(item);
-                        const option = document.createElement('option');
-                        option.value = item[key];
-                        option.textContent = item[key];
-                        selectElement.appendChild(option);
-                    });
+                    if (key) {
+                        data.forEach(item => {
+                            // console.log(item);
+                            const option = document.createElement('option');
+                            option.value = item[key];
+                            option.textContent = item[key];
+                            selectElement.appendChild(option);
+                        });
+                    }
+                    else {
+                        data.forEach(item => {
+                            // console.log(item);
+                            const option = document.createElement('option');
+                            option.value = item;
+                            option.textContent = item;
+                            selectElement.appendChild(option);
+                        });
+                    }
                 }
 
                 function calculateDose() {
