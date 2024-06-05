@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment Webpage | Hamdard University</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon-white.png">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
 
     <style>
         body {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-image: url('assets/bg.jpg');
             padding: 20px;
             color: #fff;
@@ -65,8 +65,8 @@
 
         .result {
             margin-top: 20px;
-            padding: 10px;
-            background-color: #01694a;
+            /* padding: 10px;
+            background-color: #690101; */
             border-radius: 4px;
 
         }
@@ -371,73 +371,18 @@
                     if (dose) {
                         const result = `Dose: ${dose}`;
                         document.getElementById('result').textContent = result;
+                        document.getElementById('result').style.backgroundColor = '#28a745';
+                        document.getElementById('result').style.padding = '10px';
+
                     } else {
                         document.getElementById('result').textContent = "No dose found for the selected criteria.";
+                        document.getElementById('result').style.backgroundColor = '#690101';
+                        document.getElementById('result').style.padding = '10px';
                     }
                 }
             })
             .catch(error => console.error(error));
-        // fetch('data.json')
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         const conditionSelect = document.getElementById('condition');
-        //         const indicationSelect = document.getElementById('indication');
-        //         const medicineSelect = document.getElementById('medicineName');
-        //         const doseStrengthSelect = document.getElementById('doseStrength');
 
-        //         conditionSelect.addEventListener('change', updateIndication);
-        //         indicationSelect.addEventListener('change', updateMedicine);
-        //         medicineSelect.addEventListener('change', updateDoseStrength);
-
-        //         function updateIndication() {
-        //             const condition = conditionSelect.value;
-        //             const indications = data[condition];
-        //             populateSelect(indicationSelect, indications, 'indication');
-        //             updateMedicine();
-        //         }
-
-        //         function updateMedicine() {
-        //             const condition = conditionSelect.value;
-        //             const indication = indicationSelect.value;
-        //             const medicines = data[condition].find(item => item.indication === indication);
-        //             populateSelect(medicineSelect, medicines, 'drug');
-        //             updateDoseStrength();
-        //         }
-
-        //         function updateDoseStrength() {
-        //             const condition = conditionSelect.value;
-        //             const indication = indicationSelect.value;
-        //             const medicine = medicineSelect.value;
-        //             const doseStrengths = data[condition].find(item => item.indication === indication && item.drug === medicine);
-        //             populateSelect(doseStrengthSelect, doseStrengths.age, 'requiredDose');
-        //         }
-
-        //         function populateSelect(selectElement, data, key) {
-        //             selectElement.innerHTML = '';
-        //             data.forEach(item => {
-        //                 const option = document.createElement('option');
-        //                 option.value = item[key];
-        //                 option.textContent = item[key];
-        //                 selectElement.appendChild(option);
-        //             });
-        //         }
-
-        //         function calculateDose() {
-        //             const age = document.getElementById('age').value;
-        //             const weight = document.getElementById('weight').value;
-        //             const doseCalculation = doseStrengthSelect.options[doseStrengthSelect.selectedIndex].text;
-        //             const result = `Age: ${age} years, Weight: ${weight} kg, Dose Calculation: ${doseCalculation}`;
-        //             document.getElementById('result').textContent = result;
-        //         }
-
-        //         document.getElementById('doseForm').addEventListener('submit', function (event) {
-        //             event.preventDefault();
-        //             calculateDose();
-        //         });
-
-        //         updateIndication();
-        //     })
-        //     .catch(error => console.error(error));
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
