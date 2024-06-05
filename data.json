@@ -964,7 +964,111 @@
             }
             ]
         }
-        ]
+        ],
+        "Viral Infection": [
+        {
+            "indication": "Chicken pox",
+            "drug": "Acyclovir",
+            "age": [
+                {
+                    "range": ">12",
+                    "weight": "<40kg",
+                    "requiredDose": "800mg",
+                    "doseCalculation": "4 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Genital Herpes",
+            "drug": "Valacyclovir",
+            "age": [
+                {
+                    "range": ">18",
+                    "weight": ">30kg",
+                    "requiredDose": "1000mg",
+                    "doseCalculation": "4 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Influenza A OR B",
+            "drug": "Oseltamivir",
+            "age": [
+                {
+                    "range": "<13",
+                    "weight": ">40kg",
+                    "requiredDose": "75mg",
+                    "doseCalculation": "2 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "HIV 1 Infection",
+            "drug": "Lopinavir/ritonavir",
+            "age": [
+                {
+                    "range": ">18",
+                    "weight": "20-30kg",
+                    "requiredDose": "200 mg/50mg",
+                    "doseCalculation": "2 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "HIV infection",
+            "drug": "Darunavir/ritonavir",
+            "age": [
+                {
+                    "range": "6 to 18",
+                    "weight": "20kg-30kg",
+                    "requiredDose": "375 mg/50mg",
+                    "doseCalculation": "2 tablets per day"
+                },
+                {
+                    "range": ">30kg - 40kg",
+                    "weight": "",
+                    "requiredDose": "2 tablets per day",
+                    "doseCalculation": ""
+                }
+            ]
+        },
+        {
+            "indication": "Cytomegalovirus",
+            "drug": "Gancyclovir",
+            "age": [
+                {
+                    "range": ">40",
+                    "weight": ">40kg",
+                    "requiredDose": "450 mg/60mg",
+                    "doseCalculation": "2 tablets per day"
+                }
+            ]
+        },
+        {
+            "indication": "Chronic hepatitis B",
+            "drug": "Entecavir",
+            "age": [
+                {
+                    "range": ">2",
+                    "weight": "47-49kg",
+                    "requiredDose": "5mg",
+                    "doseCalculation": "2 Capsules per day"
+                }
+            ]
+        },
+        {
+            "indication": "Hepatitis C",
+            "drug": "Sofosbuvir",
+            "age": [
+                {
+                    "range": ">18",
+                    "weight": ">35kg",
+                    "requiredDose": "600mg",
+                    "doseCalculation": "1 Capsule per day"
+                }
+            ]
+        }
+    ]
 }
 
     
